@@ -101,7 +101,7 @@ def search_tunes(df, search_term):
 
 Create a way for a user to interact with the data and run queries. This can be purely menu base like this:
 
-
+- https://www.youtube.com/watch?v=p3Vui6q_wPw
 
 Or you can use py5, tkinter or django
 
@@ -114,7 +114,7 @@ Your README must be in [this format](https://github.com/skooter500/csresources/b
 - Use docstrings for all functions and classes
 - Include type hints where appropriate
 - Add comments for complex logic
-
+- Make regular commits
 
 ## Grading Rubric
 
@@ -135,7 +135,8 @@ Overall Grade Descriptors
 
 ## Submission Requirements
 
-1. **GitHub Repository URL** via the submission link
+1. **GitHub Repository URL** via Brightspace
+2. In class demo
 
 Optional elements:
 
