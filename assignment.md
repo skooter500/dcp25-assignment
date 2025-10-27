@@ -50,7 +50,7 @@ abc_books/
 ### Parse and Insert Tunes
 
 For each ABC file:
-1. Parse and load all tunes in the file (using logic from previous lab) into an array of dictionaries
+1. Parse and load all tunes in the file (using logic from previous lab) into a list of dictionaries
 2. Insert each tune into the database with the correct book number
 
 ---
