@@ -1,4 +1,8 @@
 # ABC File Parser and Analysis
+
+This assignment is Category 3 for use of AI:
+
+![](images/Screenshot%20from%202025-11-03%2017-46-03.png)
   
 **Weight:** 30%
 **Submission:** GitHub repository URL + In-class demo
@@ -51,7 +55,7 @@ abc_books/
 
 For each ABC file:
 1. Parse and load all tunes in the file (using logic from previous lab) into a list of dictionaries
-2. Insert each tune into the database with the correct book number
+2. Insert each tune into a database table with the correct book number
 
 ---
 
@@ -78,7 +82,7 @@ def load_tunes_from_database():
 
 ### Create Analysis Functions
 
-Write functions to analyze the data. Some ideas to get you started, but include other relevant ones:
+Write functions to analyze the data. Some ideas to get you started, but include any others you think might be useful. Use your imagination to consider how a user might want to query and analyse this data:
 
 ```python
 def get_tunes_by_book(df, book_number):
@@ -99,22 +103,22 @@ def search_tunes(df, search_term):
 
 ## Part 3: Interactive Elements (30%)
 
-Create a way for a user to interact with the data and run queries. This can be purely menu base like this:
+Create a way for a user to interact with the data and run queries. This can be purely menu based like this:
 
 - https://www.youtube.com/watch?v=p3Vui6q_wPw
 
 Or you can use py5, tkinter or django
 
-## Part 4: Documentation & Github
+## Part 4: Documentation & Github (20%)
 
-Fork [this repo]
+Fork [this repo]()
 
-Your README must be in [this format](https://github.com/skooter500/csresources/blob/main/assignmentreadme.md):
+Your README must be in [this format](README.MD):
 
 - Use docstrings for all functions and classes
 - Include type hints where appropriate
 - Add comments for complex logic
-- Make regular commits
+- Make regular commits!!
 
 ## Grading Rubric
 
@@ -140,7 +144,7 @@ Overall Grade Descriptors
 
 Optional elements:
 
-- Parse the tunes and generate search keys
+- [Parse the tunes and generate search keys](https://arrow.tudublin.ie/sciendoc/71/)
 - Add plot visualizations (matplotlib)
 - Implement edit/delete tune functionality
 - Create playlist/favorites feature
