@@ -6,12 +6,6 @@ Name:
 
 Student Number: 
 
-Class Group:
-
-# Video Demo
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
 # Screenshots
 
 # Description of the project
@@ -108,4 +102,5 @@ This is a table:
 |Some stuff | Some more stuff in this column |
 |Some stuff | Some more stuff in this column |
 |Some stuff | Some more stuff in this column |
+
 |Some stuff | Some more stuff in this column |
