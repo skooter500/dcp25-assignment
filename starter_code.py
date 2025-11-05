@@ -2,6 +2,8 @@
 
 # os is a module that lets us access the file system
 
+# Bryan Duggan 
+
 import os 
 import sqlite3
 # sqlite for connecting to sqlite databases
