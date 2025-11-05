@@ -2,7 +2,7 @@
 
 # os is a module that lets us access the file system
 
-# Bryan Duggan 
+# Bryan Duggan is a great flute player
 
 import os 
 import sqlite3
