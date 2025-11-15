@@ -76,7 +76,25 @@ def process_file(file):
     pass
 
 
-# do_databasse_stuff()
+
+
+def inserting(book_number,tunes):
+    conn = sqlite3.connect('tunes.db')
+    cursor = conn.cursor()
+    
+    for tune in tunes:
+        cursor.execute('INSERET INTO tunes(book_number,title,key, body) VALUES (?,?,?,?)',(tune.get("X"),tune.get("title", ""),tune.get("key", ""),tune.get("body", "")))
+    
+    conn.commit()
+    conn.close()
+
+
+def process_file(file, book_number):   
+    tunes = process_file(file)       
+    inserting(book_number, tunes)   
+
+
+do_databasse_stuff()
 
 # Iterate over directories in abc_books
 for item in os.listdir(books_dir):
@@ -85,6 +103,7 @@ for item in os.listdir(books_dir):
     
     # Check if it's a directory and has a numeric name
     if os.path.isdir(item_path) and item.isdigit():
+        book_number = int(item)
         print(f"Found numbered directory: {item}")
         
         # Iterate over files in the numbered directory
@@ -93,4 +112,4 @@ for item in os.listdir(books_dir):
             if file.endswith('.abc'):
                 file_path = os.path.join(item_path, file)
                 print(f"  Found abc file: {file}")
-                process_file(file_path)
+                process_file(file_path, book_number)
