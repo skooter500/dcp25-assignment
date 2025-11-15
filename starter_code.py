@@ -63,9 +63,9 @@ def process_file(file):
             print(line)
             
         elif line.startswith("T:"):
-            current_tune["title"] = line[2:].strip
+            current_tune["title"] = line[2:].strip()
         elif line.startswith("K:"):
-            current_tune["key"] = line[2:].strip
+            current_tune["key"] = line[2:].strip()
         
         else:
             if current_tune:
