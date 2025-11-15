@@ -41,6 +41,10 @@ def do_databasse_stuff():
 books_dir = "abc_books"
 
 def process_file(file):
+    
+    tunes = []
+    current_tune = {}
+    
     with open(file, 'r') as f:
         lines = f.readlines()
     # list comprehension to strip the \n's
@@ -48,8 +52,28 @@ def process_file(file):
 
     # just print the files for now
     for line in lines:
-        # print(line)
-        pass
+        
+        #checks if the line starts with X:
+        if line.startswith("X:"):
+            
+            if current_tune:
+                tunes.append(current_tune)
+                
+            current_tune = {"X": line[2:].strip(),"body":""}
+            print(line)
+            
+        elif line.startswith("T:"):
+            current_tune["title"] = line[2:].strip
+        elif line.startswith("K:"):
+            current_tune["key"] = line[2:].strip
+        
+        else:
+            if current_tune:
+                current_tune["body"] += line + "\n"
+    if current_tune:
+        tunes.append(current_tune)
+    return tunes
+    pass
 
 
 # do_databasse_stuff()
