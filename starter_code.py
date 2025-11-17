@@ -82,19 +82,21 @@ def inserting(book_number,tunes):
     conn = sqlite3.connect('tunes.db')
     cursor = conn.cursor()
     
+    cursor.execute('CREATE TABLE IF NOT EXISTS tunes (id INTEGER PRIMARY KEY AUTOINCREMENT, book_number INTEGER, title TEXT, key TEXT, body TEXT)')
+    
     for tune in tunes:
-        cursor.execute('INSERET INTO tunes(book_number,title,key, body) VALUES (?,?,?,?)',(tune.get("X"),tune.get("title", ""),tune.get("key", ""),tune.get("body", "")))
+        cursor.execute('INSERT INTO tunes(book_number,title,key, body) VALUES (?,?,?,?)',(book_number,tune.get("title", ""),tune.get("key", ""),tune.get("body", "")))
     
     conn.commit()
     conn.close()
 
 
-def process_file(file, book_number):   
+def process(file, book_number):   
     tunes = process_file(file)       
     inserting(book_number, tunes)   
 
 
-do_databasse_stuff()
+#do_databasse_stuff()
 
 # Iterate over directories in abc_books
 for item in os.listdir(books_dir):
@@ -112,4 +114,7 @@ for item in os.listdir(books_dir):
             if file.endswith('.abc'):
                 file_path = os.path.join(item_path, file)
                 print(f"  Found abc file: {file}")
-                process_file(file_path, book_number)
+                process(file_path, book_number)
+
+
+import pandas 
