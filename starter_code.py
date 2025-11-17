@@ -44,7 +44,7 @@ def do_databasse_stuff():
     conn.close()
 
 def my_sql_database():
-    conn = mysql.connector.connect(host="10.154.12.37", user="root1", database="tunepal")
+    conn = mysql.connector.connect(host="localhost", user="root", database="tunepal")
     
     cursor = conn.cursor()
     cursor.execute("select * from tuneindex")
@@ -80,8 +80,8 @@ def process_file(file):
         pass
 
 
-my_sql_database()
-do_databasse_stuff()
+# my_sql_database()
+# do_databasse_stuff()
 
 # Iterate over directories in abc_books
 for item in os.listdir(books_dir):
