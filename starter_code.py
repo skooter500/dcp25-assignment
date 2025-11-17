@@ -11,6 +11,7 @@ import sqlite3
 
 # An example of how to create a table, insert data
 # and run a select query
+'''
 def do_databasse_stuff():
 
     conn = sqlite3.connect('tunes.db')
@@ -36,6 +37,7 @@ def do_databasse_stuff():
 
     # Close
     conn.close()
+    '''
 
 
 books_dir = "abc_books"
@@ -117,4 +119,26 @@ for item in os.listdir(books_dir):
                 process(file_path, book_number)
 
 
-import pandas 
+import pandas as pd
+import mysql.connector
+
+def connect_to_database():
+    return mysql.connector.connect(
+        host="localhost",
+        user="your_username",
+        password="your_password",
+        database="tunes.db"
+    )
+
+def load_tunes_from_database():
+    """Load all tunes from MySQL into a pandas DataFrame"""
+    conn = connect_to_database()
+    
+    query = "SELECT * FROM tunes"
+    
+    # read_sql works with MySQL connection using sqlalchemy or pymysql better,
+    # but for mysql.connector we can use:
+    df = pd.read_sql(query, conn)  # This works if pandas version supports it
+    
+    conn.close()
+    return df
