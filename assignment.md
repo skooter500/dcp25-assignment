@@ -61,24 +61,14 @@ For each ABC file:
 
 ## Part 2: Data Loading with Pandas (20%)
 
-### Load Data from MySQL
+### Load Data from SQLITE
 
 Create a function that loads the entire tunes table into a pandas DataFrame.
 
 ```python
-import pandas as pd
-import mysql.connector
 
-def load_tunes_from_database():
-    """Load all tunes from MySQL into DataFrame"""
-    conn = connect_to_database()
-    
-    query = "SELECT * FROM tunes"
     df = pd.read_sql(query, conn)
-    
-    conn.close()
-    return df
-```
+```    
 
 ### Create Analysis Functions
 
