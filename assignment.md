@@ -55,7 +55,7 @@ abc_books/
 
 For each ABC file:
 1. Parse and load all tunes in the file (using logic from previous lab) into a list of dictionaries
-2. Insert each tune into a database table with the correct book number
+2. Insert each tune into a database table in SQLITE or MYSQL with the correct book number
 
 ---
 
